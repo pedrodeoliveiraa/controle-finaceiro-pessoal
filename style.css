@@ -5,172 +5,38 @@
     box-sizing: border-box;
 }
 
-/* Estilo para o contêiner principal */
+/* Estilos gerais */
+body {
+    background-color: #f9f9f9; /* Modo Claro */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #fff; /* Modo Claro */
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo do título principal */
-h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Estilo para a seção de entradas (inputs) */
-.input-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.input-section input {
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 230px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.input-section input:focus {
-    border-color: #4caf50;
-    outline: none;
-}
-
-/* Botão de adicionar transação */
-.input-section button {
-    padding: 12px 20px;
+button {
     background-color: #007bff; /* Azul */
     color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
-.input-section button:hover {
+button:hover {
     background-color: #0056b3; /* Azul mais escuro */
 }
 
-/* Estilo para o Dashboard */
-#dashboard-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* Estilo para o contêiner de informações de saldo */
-#balance-info {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 20px;
-    min-width: 300px;
-    max-width: 400px;
-}
-
-#balance-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#balance-info h4 {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Estilo para o gráfico */
-#chart-container {
-    width: 300px; /* Largura do gráfico */
-    height: 300px; /* Altura do gráfico */
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    min-width: 300px;
-}
-
-#expenseChart {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-/* Estilo para a lista de transações */
-#transaction-list {
-    margin-top: 30px;
-    list-style: none;
-    padding: 0;
-}
-
-#transaction-list li {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    font-weight: 500;
-}
-
-#transaction-list li button {
-    background-color: #007bff; /* Azul */
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-#transaction-list li button:hover {
-    background-color: #0056b3; /* Azul mais escuro */
-}
-
-/* Estilo para a cor do saldo positivo */
-.balance-positive {
-    color: #4caf50;
-    font-weight: bold;
-}
-
-/* Estilo para a cor do saldo negativo */
-.balance-negative {
-    color: #f44336;
-    font-weight: bold;
-}
-
-/* Estilo para a cor de alerta (mais de 70%) */
-.balance-warning {
-    color: #ff9800;
-    font-weight: bold;
-}
-
-/* Estilo para o rodapé */
-.footer {
+footer {
     text-align: center;
     font-size: 14px;
     color: #555;
@@ -178,4 +44,31 @@ h1 {
     padding: 20px;
     background-color: #f9f9f9;
     border-top: 2px solid #ccc;
+}
+
+/* Estilos para o Modo Escuro */
+body.dark-mode {
+    background-color: #121212; /* Fundo escuro */
+    color: #f1f1f1; /* Texto claro */
+}
+
+.container.dark-mode {
+    background-color: #333; /* Fundo escuro para container */
+    color: #f1f1f1;
+}
+
+button.dark-mode {
+    background-color: #0056b3; /* Azul mais escuro no modo escuro */
+}
+
+footer.dark-mode {
+    background-color: #333; /* Rodapé escuro */
+    color: #f1f1f1;
+}
+
+/* Estilos específicos para elementos do Dashboard */
+#balance-info, #chart-container, #transaction-list li {
+    background-color: #222; /* Fundo escuro para cards e listas */
+    color: #f1f1f1; /* Texto claro */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }

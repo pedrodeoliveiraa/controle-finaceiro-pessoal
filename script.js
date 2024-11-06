@@ -2,6 +2,30 @@ let transactions = loadTransactions();
 let salary = loadSalary();
 let expenseChart; // Variável para armazenar o gráfico
 
+// Função para alternar entre o modo claro e escuro
+const toggleButton = document.getElementById('toggle-dark-mode');
+
+// Verifica se o modo escuro foi ativado anteriormente e aplica
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    toggleButton.innerText = "Desativar Modo Escuro";
+}
+
+// Adiciona evento de click para alternar o modo
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Se a classe dark-mode estiver ativa, altere o texto do botão e salve no localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.innerText = "Desativar Modo Escuro";
+        localStorage.setItem('dark-mode', 'enabled');  // Salva a preferência no localStorage
+    } else {
+        toggleButton.innerText = "Ativar Modo Escuro";
+        localStorage.setItem('dark-mode', 'disabled'); // Salva a preferência no localStorage
+    }
+});
+
+
 function addTransaction() {
     const description = document.getElementById("description").value;
     const amount = parseFloat(document.getElementById("amount").value) || 0;
@@ -143,4 +167,4 @@ function renderExpenseChart() {
     });
 }
 
-initializeSystem();
+
